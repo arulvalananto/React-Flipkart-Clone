@@ -1,9 +1,17 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="app">
-      <h1>Hello World</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Header />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

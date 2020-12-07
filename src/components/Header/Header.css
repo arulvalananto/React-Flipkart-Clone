@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 0.08;
+    color: #fff;
+    background: #2874F0;
+}
+.header__left {
+    display: flex;
+    align-items: center;
+    flex: 0.6;
+}
+.header__logoBox {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.header__logo {
+    width: 80px;
+    object-fit: contain;
+}
+.header__explore {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-style: italic;
+    font-size: 12px;
+}
+.header__explore > span {
+    color: #D2CD32;
+    padding-left: 2px;
+}
+.header__exploreLogo {
+    width: 10px;
+    object-fit: contain;
+}
+.header__searchBox {
+    display: flex;
+    align-items: center;
+    background: #ffff;
+    padding: 3px 15px;
+    flex: 0.7;
+    margin-left: 10px;
+    border-radius: 2px;
+}
+.header__searchInput {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+.header__searchButton {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 10px;
+}
+.header__searchButton > .MuiSvgIcon-root {
+    color: #2874F0;
+}
+.header__searchButton  > .MuiSvgIcon-root:hover {
+    color: #1063e9;
+}
+.header__right {
+    display: flex;
+    align-items: center;
+}
+.header__userMenu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header__link {
+    text-decoration: none;
+    color: black;
+}
+.header__link--white {
+    color: white;
+}
+.header__userMenuItem {
+    font-size: 12px;
+}
+.header__userMenuItem > .MuiSvgIcon-root {
+    margin-right: 10px;
+    color: #2874F0;
+}
+.header__userMenu > .MuiSvgIcon-root {
+    align-self: flex-end;
+}
+.header__loginButton {
+    border: none;
+    outline: none;
+    padding: 8px 32px;
+    color: #2874F0;
+    background: #fff;
+    font-weight: 600;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.header__cart {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
