@@ -1,0 +1,79 @@
+.auth__background {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  width: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 98;
+}
+.auth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.auth__container {
+  display: flex;
+  height: 70vh;
+  width: 50vw;
+}
+.signIn__left,
+.signUp__left {
+  background: #2874f0;
+  flex: 0.3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.signIn__title,
+.signUp__title {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.signIn__content,
+.signUp__content {
+  color: #dbdbd5;
+}
+.signIn__right,
+.signUp__right {
+  flex: 0.7;
+  background: #fff;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.signIn__form,
+.signUp__form {
+  display: flex;
+  flex-direction: column;
+}
+.signIn__button,
+.signUp__button {
+  margin-top: 30px;
+  padding: 10px 0;
+  border: none;
+  color: #fff;
+  background: #fb641b;
+  border-radius: 3px;
+}
+.auth__toggleButton {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+.signIn_option,
+.signIn__transfer,
+.signUp__transfer {
+  align-self: center;
+}
+.signIn__transfer,
+.signUp__transfer {
+  font-size: 14px;
+  color: #2874f0;
+}

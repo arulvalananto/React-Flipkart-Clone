@@ -80,7 +80,7 @@
     color: white;
 }
 .header__userMenuItem {
-    font-size: 12px;
+    font-size: 16px;
 }
 .header__userMenuItem > .MuiSvgIcon-root {
     margin-right: 10px;

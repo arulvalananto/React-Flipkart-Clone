@@ -12,9 +12,13 @@ import {
 } from "@material-ui/icons";
 import { Menu, MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../../contextAPI/StateProvider";
+import { actionTypes } from "../../contextAPI/reducer";
+import { auth } from '../../firebase';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [{user}, dispatch] = useStateValue();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -22,6 +26,10 @@ const Header = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const toggleLogin = () => {
+    dispatch({ type: actionTypes.TOGGLE_LOGIN, condition: true });
   };
 
   return (
@@ -59,7 +67,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header__right">
-        {false ? (
+        {user ? (
           <div>
             <p
               className="header__userMenu"
@@ -67,7 +75,7 @@ const Header = () => {
               aria-haspopup="true"
               onClick={handleClick}
             >
-              {"username".toUpperCase()}
+              {user?.displayName?.toUpperCase()}
               {anchorEl ? <ExpandLess /> : <ExpandMore />}
             </p>
             <Menu
@@ -108,14 +116,17 @@ const Header = () => {
                   Wishlist
                 </MenuItem>
               </Link>
-              <MenuItem onClick={handleClose} className="header__userMenuItem">
+              <MenuItem onClick={() => {
+                auth.signOut();
+                handleClose();
+              }} className="header__userMenuItem">
                 <ExitToApp fontSize="small" />
                 Logout
               </MenuItem>
             </Menu>
           </div>
         ) : (
-          <button className="header__loginButton">Login</button>
+          <button className="header__loginButton" onClick={toggleLogin}>Login</button>
         )}
         <Link to="/cart" className="header__link header__link--white">
           <div className="header__cart">
