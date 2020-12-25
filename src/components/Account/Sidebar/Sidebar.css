@@ -1,5 +1,60 @@
 .sidebar {
-    flex: 0.3;
-    background: blanchedalmond;
+    flex: 0.25;
     margin-right: 2rem;
+    height: 100%;
+}
+.sidebar__info {
+    background: #fff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.sidebar__pic {
+    margin-right: 0.8rem;
+}
+.sidebar__invitation {
+    font-size: 12px;
+}
+.sidebar__username {
+    font-weight: 500;
+}
+.sidebar__navigations {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.sidebar__navigationSection {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid lightgray;
+}
+.sidebar__navigationTitleContainer {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.sidebar__navigationTitleIcon {
+    color: #2874F0;
+    margin-right: 0.8rem;
+}
+.sidebar__navigationTitle {
+    color: #87878F;
+    font-size: 16px;
+    font-weight: 500;
+}
+.sidebar__navigationItem {
+    padding: 0.5rem 4rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+.sidebar__navigation > a {
+    text-decoration: none;
+    color: #000;
+}
+.sidebar__navigationItem:hover,
+.active {
+    color: #2874F0;
+    background-color: #f1f1f1;
 }

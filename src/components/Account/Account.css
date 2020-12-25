@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     padding: 3rem;
-    background-color: burlywood;
+    background: #f1f1f1;
 }
 .account__wrapper {
     width: 85%;

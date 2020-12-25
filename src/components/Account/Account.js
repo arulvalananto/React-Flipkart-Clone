@@ -1,18 +1,22 @@
-import React from 'react'
-import './Account.css';
+import React from "react";
+import { useStateValue } from "../../contextAPI/StateProvider";
+import "./Account.css";
 //components
-import ProfileContent from './ProfileContent/ProfileContent'
-import Sidebar from './Sidebar/Sidebar'
+import ProfileContent from "./ProfileContent/ProfileContent";
+import Sidebar from "./Sidebar/Sidebar";
 
-const Account = () => {
-    return (
-        <div className="account">
+const Account = ({ pathName }) => {
+   const [{ user }] = useStateValue();
+   return (
+      user && (
+         <div className="account">
             <div className="account__wrapper">
-                <Sidebar />
-                <ProfileContent />
+               <Sidebar />
+               <ProfileContent pathName={pathName} />
             </div>
-        </div>
-    )
-}
+         </div>
+      )
+   );
+};
 
-export default Account
+export default Account;
