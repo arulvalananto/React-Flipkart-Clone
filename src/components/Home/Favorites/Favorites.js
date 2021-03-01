@@ -1,6 +1,8 @@
 import React from "react";
 import "./Favorites.css";
+//Data
 import { products } from "../../../data/products";
+//React-Router
 import { Link } from "react-router-dom";
 
 const Favorites = () => {

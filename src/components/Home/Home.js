@@ -1,4 +1,6 @@
 import React from "react";
+
+//Components
 import CarouselList from "./CarouselList/CarouselList";
 import Favorites from "./Favorites/Favorites";
 
