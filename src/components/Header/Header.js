@@ -18,7 +18,7 @@ import { auth, db } from "../../firebase";
 
 const Header = () => {
    const [anchorEl, setAnchorEl] = useState(null);
-   const [{ user }, dispatch] = useStateValue();
+   const [{ user, username }, dispatch] = useStateValue();
    const history = useHistory();
    const [userName, setUserName] = useState("");
 
@@ -26,8 +26,8 @@ const Header = () => {
       db.collection("users")
          .doc(user?.email)
          .get()
-         .then((doc) => setUserName(doc.data()?.displayName));
-   }, [user]);
+         .then((doc) => setUserName(doc.data()?.firstName));
+   }, [username]);
 
    const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -66,7 +66,7 @@ const Header = () => {
             </div>
             <div className="header__searchBox">
                <input
-                  type="text"
+                  type="search"
                   placeholder="Search for products, brands and more"
                   className="header__searchInput"
                />
@@ -84,7 +84,7 @@ const Header = () => {
                      aria-haspopup="true"
                      onClick={handleClick}
                   >
-                     {userName || user?.displayName?.toUpperCase()}
+                     {userName || userName[0]?.toUpperCase() + userName?.slice(1)}
                      {anchorEl ? <ExpandLess /> : <ExpandMore />}
                   </p>
                   <Menu

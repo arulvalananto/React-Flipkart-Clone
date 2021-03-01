@@ -1,0 +1,125 @@
+.product__wrapper {
+    background: #F1F3F6;
+    width: 100vw;
+    height: 100vh;
+}
+.product {
+    margin: 0rem 4rem;
+    height: 92vh;
+    display: flex;
+    background: #fff;
+}
+.product__left {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.product__image {
+    width: 30rem;
+    height: 30rem;
+    object-fit: contain;
+}
+.product__buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.product__cartButton {
+    background: #FF9F00;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    padding: 1rem 4rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+.product__buyButton {
+    background: #FB641B;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    padding: 1rem 4rem;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+.product__right {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+.product__title {
+    font-size: 20px;
+    font-weight: 400;
+}
+.product__ratingBox {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2rem;
+}
+.product__rating {
+    margin-right: 1rem;
+    color: #fff;
+    background: #388E3C;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.product__rating > .MuiSvgIcon-root {
+    font-size: 14px;
+}
+.product__ratingCount {
+    color: #a1a1a1;
+    font-weight: 500;
+    font-size: 14px;
+}
+.product__priceBox {
+    margin: 1rem 0rem;
+    display: flex;
+    align-items: center;
+}
+.product__price {
+    margin-right: 0.5rem;
+}
+.product__originalPrice {
+    margin-right: 0.5rem;
+    text-decoration: line-through;
+    color: #a3a3a3;
+    font-weight: 400;
+}
+.product__offer {
+    color: #388E3C;
+    font-weight: 500;
+}
+.product__offers h4 {
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+.product__offers  p {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+.product__offers  p span {
+    color: #2874F0;
+    font-weight: 500;
+}
+.product__offers  p  .MuiSvgIcon-root {
+    color: #388E3C;
+    margin-right: 0.2rem;
+}
+.product__description {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

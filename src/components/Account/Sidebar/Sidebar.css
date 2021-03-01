@@ -20,6 +20,7 @@
 }
 .sidebar__username {
     font-weight: 500;
+    font-size: 16px;
 }
 .sidebar__navigations {
     background: #fff;
@@ -48,6 +49,7 @@
     padding: 0.5rem 4rem;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
 }
 .sidebar__navigation > a {
     text-decoration: none;
@@ -55,6 +57,10 @@
 }
 .sidebar__navigationItem:hover,
 .active {
-    color: #2874F0;
-    background-color: #f1f1f1;
+    font-weight: 500;
+    color: #2874f0;
+    background-color: #f5faff;
+}
+p {
+    margin-bottom: 0;
 }

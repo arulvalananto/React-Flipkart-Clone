@@ -1,0 +1,20 @@
+.carousel-control-prev-icon {
+   color: white;
+   background-color: gray;
+   padding: 3rem 1.7rem;
+   position: absolute;
+   top: 5rem;
+   left: 0.5rem;
+   border-top-right-radius: 3px;
+   border-bottom-right-radius: 3px;
+}
+.carousel-control-next-icon {
+   color: white;
+   background-color: gray;
+   padding: 3rem 1.7rem;
+   position: absolute;
+   top: 5rem;
+   right: 0.5rem;
+   border-top-left-radius: 3px;
+   border-bottom-left-radius: 3px;
+}

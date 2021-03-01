@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { actionTypes } from "../../../../contextAPI/reducer";
 import { useStateValue } from "../../../../contextAPI/StateProvider";
 import { db } from "../../../../firebase";
 import "./Profile.css";
 
 const Profile = () => {
-   const [{ user }] = useStateValue();
+   const [{ user }, dispatch] = useStateValue();
    const [loading, setLoading] = useState(true);
 
    const [editPersonal, setEditPersonal] = useState(false);
@@ -28,11 +29,23 @@ const Profile = () => {
             setEmail(doc.data()?.email);
             setMobileNumber(doc.data()?.phoneNumber);
          })
+         // .then((data) => {
+         //    dispatch({
+         //       type: actionTypes.SET_USER_ADDITIONAL,
+         //       payload: {
+         //          firstName: firstName,
+         //          lastName: lastName,
+         //          gender: gender,
+         //          email: email,
+         //          phoneNumber: mobileNumber,
+         //       },
+         //    });
+         // })
          .then((el) => {
             setLoading(false);
             setEmail(user?.email);
          });
-   }, [user]);
+   }, [user?.email]);
 
    const updatePersonalInformation = () => {
       if (lastName === "" || firstName === "" || gender === "") {
@@ -44,6 +57,12 @@ const Profile = () => {
                firstName: firstName,
                lastName: lastName,
                email: user?.email,
+            })
+            .then((data) => {
+               dispatch({
+                  type: actionTypes.SET_USERNAME,
+                  username: firstName + " " + lastName,
+               });
             });
       } else {
          db.collection("users")
@@ -53,17 +72,25 @@ const Profile = () => {
                gender: gender,
                firstName: firstName,
                lastName: lastName,
+            })
+            .then((data) => {
+               dispatch({
+                  type: actionTypes.SET_USERNAME,
+                  username: firstName + " " + lastName,
+               });
             });
       }
       setEditPersonal(false);
    };
-   const updateEmailAddress = () => {
+   const updateEmailAddress = (e) => {
+      e.preventDefault();
       db.collection("users").doc(user?.email).update({
          email: email,
       });
       setEditEmail(false);
    };
-   const updateMobileNumber = () => {
+   const updateMobileNumber = (e) => {
+      e.preventDefault();
       db.collection("users")
          .doc(user?.email)
          .update({
@@ -87,22 +114,42 @@ const Profile = () => {
                         <p onClick={() => setEditPersonal(true)}>Edit</p>
                      )}
                   </div>
-                  <div className="profile__sectionForm">
-                     <div>
+                  <form className="profile__sectionForm">
+                     <div className="profile__personalForm">
                         <input
                            type="text"
                            disabled={!editPersonal}
-                           placeholder="First Name"
                            value={firstName}
                            onChange={(e) => setFirstName(e.target.value)}
                         />
+                        {editPersonal && (
+                           <label
+                              className={`firstnameLabel ${
+                                 (editPersonal ||
+                                    firstName.length > 0 ||
+                                    firstName !== "") &&
+                                 "firstnameLabel--active"
+                              }`}
+                           >
+                              First Name
+                           </label>
+                        )}
                         <input
                            type="text"
                            disabled={!editPersonal}
-                           placeholder="Last Name"
                            value={lastName}
                            onChange={(e) => setLastName(e.target.value)}
                         />
+                        {editPersonal && (
+                           <label
+                              className={`lastnameLabel ${
+                                 (editPersonal || lastName.length > 0) &&
+                                 "lastnameLabel--active"
+                              }`}
+                           >
+                              Last Name
+                           </label>
+                        )}
                         {editPersonal ? (
                            <button onClick={updatePersonalInformation}>
                               Save
@@ -128,7 +175,7 @@ const Profile = () => {
                         />
                         <label>Female</label>
                      </div>
-                  </div>
+                  </form>
                </div>
                <div className="profile__section">
                   <div className="profile__sectionTitle">
@@ -141,17 +188,16 @@ const Profile = () => {
                      <p>Change Password</p>
                   </div>
                   <div className="profile__sectionForm">
-                     <div>
+                     <form onSubmit={updateEmailAddress}>
                         <input
-                           type="text"
+                           type="email"
                            disabled={!editEmail}
                            value={email}
                            onChange={(e) => setEmail(e.target.value)}
+                           required
                         />
-                        {editEmail ? (
-                           <button onClick={updateEmailAddress}>Save</button>
-                        ) : null}
-                     </div>
+                        {editEmail ? <button type="submit">Save</button> : null}
+                     </form>
                   </div>
                </div>
                <div className="profile__section">
@@ -164,17 +210,21 @@ const Profile = () => {
                      )}
                   </div>
                   <div className="profile__sectionForm">
-                     <div>
+                     <form onSubmit={updateMobileNumber}>
                         <input
                            type="tel"
                            disabled={!editMobileNumber}
+                           pattern="[1-9]{1}[0-9]{9}"
+                           title="Please enter exactly 10 digits"
+                           maxLength={10}
                            value={mobileNumber}
                            onChange={(e) => setMobileNumber(e.target.value)}
+                           required
                         />
                         {editMobileNumber ? (
-                           <button onClick={updateMobileNumber}>Save</button>
+                           <button type="submit">Save</button>
                         ) : null}
-                     </div>
+                     </form>
                   </div>
                </div>
             </>

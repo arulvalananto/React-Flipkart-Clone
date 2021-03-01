@@ -8,8 +8,8 @@ const firebaseConfig = {
   projectId: "flipkat-copy",
   storageBucket: "flipkat-copy.appspot.com",
   messagingSenderId: "305353202860",
-  appId: "1:305353202860:web:f74bbe00e7e6b4d6d29309",
-  measurementId: "G-NR8NQW1SMG"
+  appId: "1:305353202860:web:7c2893ac68b75df4d29309",
+  measurementId: "G-WV4LEMLSC1"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

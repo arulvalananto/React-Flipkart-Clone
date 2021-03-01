@@ -4,3 +4,133 @@
    border-radius: 3px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+.addresses__title {
+   font-size: 18px;
+   margin-bottom: 1.5rem;
+   font-weight: 500;
+}
+.addAddress {
+   border: 1px solid lightgray;
+   border-radius: 3px;
+}
+.addAddress__close {
+   padding: 1rem;
+}
+.addAddress__close > p,
+.addAddress__open > p {
+   display: flex;
+   align-items: center;
+   color: #2874f0;
+   font-weight: 500;
+   font-size: 16px;
+}
+.addAddress__close > p > .MuiSvgIcon-root {
+   margin-right: 1rem;
+}
+.addAddress__open {
+   background-color: #f5faff;
+   padding: 1.5rem;
+}
+.addAddress__form {
+   margin-top: 1rem;
+}
+.addAddress__formSection {
+   margin-bottom: 1rem;
+}
+.addAddress__formSection > input {
+   padding: 0.7rem 1rem;
+   font-size: 14px;
+   width: 35%;
+   background-color: #fff;
+   border: 1px solid lightgray;
+   border-radius: 3px;
+}
+.addAddress__formSection > textarea {
+   width: 79%;
+   font-size: 14px;
+   font-family: inherit;
+   border: 1px solid lightgray;
+   padding: 0.7rem;
+   border-radius: 3px;
+   resize: none;
+}
+.addAddress__formSection > select {
+   font-size: 16px;
+   padding: 0.7rem 1.9rem;
+   border: 1px solid lightgray;
+   border-radius: 3px;
+   color: gray;
+}
+.addAddress__formSection > input:first-child {
+   margin-right: 1.3rem;
+}
+.addAddress__addressType {
+   font-size: 12px;
+   color: lightslategray;
+   font-weight: 400;
+   margin-left: 0.3rem;
+}
+.addAddress__formSection > input[type="radio"] {
+   margin-top: 1rem;
+   margin-right: 0.3rem;
+   width: 5%;
+}
+.addAddress__formButtonSection {
+   display: flex;
+   align-items: center;
+}
+.addAddress__formButtonSection > button {
+   margin-right: 1.5rem;
+   background: #2874f0;
+   padding: 1rem 3rem;
+   border: none;
+   outline: none;
+   color: #fff;
+   font-size: 16px;
+   border-radius: 3px;
+}
+.addAddress__formButtonSection > p {
+   color: #2874f0;
+   font-size: 16px;
+   font-weight: 600;
+}
+.addresses__list {
+   margin-top: 1.5rem;
+}
+.addresses__content {
+   border: 1px solid lightgray;
+   position: relative;
+   padding: 2.5rem 1rem;
+}
+.addresses__details {
+   width: 75%;
+}
+.addresses__info {
+   display: flex;
+   align-items: center;
+   margin-bottom: 0.5rem;
+}
+.addresses__info > h6 {
+   font-size: 14px;
+   margin-right: 1rem;
+   font-weight: 500;
+}
+.addresses__details > p {
+   font-size: 14px;
+}
+.addresses__options {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+.addresses__addressType {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   padding: 2px 4px;
+   border-radius: 2px;
+   font-size: 12px !important;
+   font-weight: 500;
+   color: gray;
+   background-color: lightgray;
+} 

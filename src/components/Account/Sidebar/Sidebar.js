@@ -9,15 +9,15 @@ import "./Sidebar.css";
 const Sidebar = () => {
    let { url } = useRouteMatch();
 
-   const [{ user }] = useStateValue();
+   const [{ user, username }] = useStateValue();
    const [userName, setUserName] = useState("");
 
    useEffect(() => {
       db.collection("users")
          .doc(user?.email)
          .get()
-         .then((doc) => setUserName(doc.data()?.displayName));
-   }, [userName]);
+         .then((doc) => setUserName(doc.data()?.displayName))
+   }, [username]);
 
    return (
       <div className="sidebar">
@@ -28,7 +28,7 @@ const Sidebar = () => {
             />
             <div className="sidebar__details">
                <p className="sidebar__invitation">Hello,</p>
-               <h4 className="sidebar__username">{userName || "Guest"}</h4>
+               <h4 className="sidebar__username">{userName}</h4>
             </div>
          </div>
          <div className="sidebar__navigations">

@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import AddAddress from "./AddAddress/AddAddress";
 import "./Addresses.css";
+import { AddressList } from "./AddressList/AddressList";
 
 const Addresses = () => {
-   const [loading, setLoading] = useState(true);
-
    return (
       <div className="addresses">
-         {loading ? (
-            "Loading Addresses..."
-         ) : (
-            <>
-               <h4>Addresses</h4>
-            </>
-         )}
+         <h4 className="addresses__title">Manage Addresses</h4>
+         <AddAddress />
+         <AddressList />
       </div>
    );
 };

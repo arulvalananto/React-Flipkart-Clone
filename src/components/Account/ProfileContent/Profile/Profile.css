@@ -13,11 +13,15 @@
     padding-bottom: 1rem;
 }
 .profile__sectionTitle > h4 {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 500;
 }
 .profile__sectionTitle > p {
-    color: #0846a8;
+    color: #2874F0;
     margin-left: 1rem;
+    font-weight: 500;
+    font-size: 14px;
+    align-self: center;
 }
 .profile__sectionForm div{
     display: flex;
@@ -25,8 +29,41 @@
 }
 .profile__sectionForm input {
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
     margin: 1rem;
+    padding-top: 1rem;
+    position: relative;
+}
+.profile__personalForm {
+    position: relative;
+}
+.firstnameLabel {
+    position: absolute;
+    left: 30px;
+    top:28px;
+    transition: all 0.2s;
+    color: gray;
+    font-weight: 500;
+}
+.lastnameLabel {
+    position: absolute;
+    left: 279px;
+    top:30px;
+    transition: all 0.2s;
+    color: gray;
+    font-weight: 500;
+}
+.firstnameLabel--active {
+    font-size: 10px;
+    top: 18px;
+    left: 28px;
+    color: #2874F0;
+}
+.lastnameLabel--active {
+    font-size: 10px;
+    top: 18px;
+    left: 280px;
+    color: #2874F0;
 }
 .profile__sectionForm button {
     background: #2874F0;
